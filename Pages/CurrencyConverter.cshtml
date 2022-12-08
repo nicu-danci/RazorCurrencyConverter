@@ -1,0 +1,33 @@
+﻿@page
+@model RazorCurrencyConverter.Pages.CurrencyConverterModel
+@{
+}
+
+<div>
+    <header class="text-center">
+        <h1 class="display-4">
+            Currency Converter <br />
+            POUND to RON
+        </h1>
+        <br />
+        <h2>By Nicoara Valeriu Danci</h2>
+    </header>
+</div>
+<form method="post" class="mx-auto" style="width:200px">
+    <p class="col-sm-2">
+        <label for="sourceCurrency">Pound</label>
+        <input type="number" required placeholder="0.00" asp-for="@Model.InputPOUND" />
+    </p>
+    <p class="col-sm-2">
+        <label for="destCurrency">RON</label>
+        <input type="number" asp-for="@Model.OutputRON" value="@Model.OutputRON.ToString("0.00")" readonly />
+    </p>
+    <p class="col-sm-2">
+        <button type="submit" class="btn btn-primary">
+            Convert
+        </button>
+    </p>
+    <p class="col-12">
+        @ViewData["Message"]
+    </p>
+</form>
